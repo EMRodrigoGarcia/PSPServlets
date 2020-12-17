@@ -1,4 +1,5 @@
 <web-app>
+<!-- Servlet que "cuenta" las visitas -->
    <servlet>
       <servlet-name>hola</servlet-name>
       <servlet-class>ejemplo.Hola</servlet-class>
@@ -7,6 +8,7 @@
       <servlet-name>hola</servlet-name>
       <url-pattern>/hola</url-pattern>
    </servlet-mapping>
+   <!-- Servlet que coloca en mayus los parametros -->
     <servlet>
       <servlet-name>mayusculas</servlet-name>
       <servlet-class>ejemplo.Mayusculas</servlet-class>
@@ -14,6 +16,15 @@
    <servlet-mapping>
       <servlet-name>mayusculas</servlet-name>
       <url-pattern>/mayusculas</url-pattern>
+   </servlet-mapping>
+<!-- Servlet que suma 2 numeros -->
+   <servlet>
+      <servlet-name>suma</servlet-name>
+      <servlet-class>ejemplo.Suma</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>suma</servlet-name>
+      <url-pattern>/suma</url-pattern>
    </servlet-mapping>
 </web-app>
 
