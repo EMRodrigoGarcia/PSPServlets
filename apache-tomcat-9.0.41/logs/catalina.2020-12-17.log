@@ -792,3 +792,60 @@
 17-Dec-2020 19:48:59.745 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.reload Reloading context [/primer-servlet]
 17-Dec-2020 19:48:59.745 INFO [Catalina-utility-2] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/primer-servlet] has started
 17-Dec-2020 19:48:59.768 INFO [Catalina-utility-2] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/primer-servlet] is completed
+17-Dec-2020 19:50:29.816 INFO [Thread-3] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+17-Dec-2020 19:50:29.824 INFO [Thread-3] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+17-Dec-2020 19:50:29.880 INFO [Thread-3] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+17-Dec-2020 19:50:29.928 INFO [Thread-3] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+17-Dec-2020 20:24:46.523 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.41
+17-Dec-2020 20:24:46.527 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Dec 3 2020 11:43:00 UTC
+17-Dec-2020 20:24:46.527 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.41.0
+17-Dec-2020 20:24:46.527 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+17-Dec-2020 20:24:46.527 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            5.4.0-58-generic
+17-Dec-2020 20:24:46.527 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+17-Dec-2020 20:24:46.527 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-14-openjdk-amd64
+17-Dec-2020 20:24:46.528 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           14.0.2+12-Ubuntu-120.04
+17-Dec-2020 20:24:46.528 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Private Build
+17-Dec-2020 20:24:46.528 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/litoral/Documents/Clase/PSP/PSPServlets/apache-tomcat-9.0.41
+17-Dec-2020 20:24:46.528 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/litoral/Documents/Clase/PSP/PSPServlets/apache-tomcat-9.0.41
+17-Dec-2020 20:24:46.557 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+17-Dec-2020 20:24:46.560 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+17-Dec-2020 20:24:46.560 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+17-Dec-2020 20:24:46.560 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/litoral/Documents/Clase/PSP/PSPServlets/apache-tomcat-9.0.41/conf/logging.properties
+17-Dec-2020 20:24:46.560 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+17-Dec-2020 20:24:46.560 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+17-Dec-2020 20:24:46.561 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+17-Dec-2020 20:24:46.561 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+17-Dec-2020 20:24:46.561 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+17-Dec-2020 20:24:46.561 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/litoral/Documents/Clase/PSP/PSPServlets/apache-tomcat-9.0.41
+17-Dec-2020 20:24:46.561 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/litoral/Documents/Clase/PSP/PSPServlets/apache-tomcat-9.0.41
+17-Dec-2020 20:24:46.561 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/litoral/Documents/Clase/PSP/PSPServlets/apache-tomcat-9.0.41/temp
+17-Dec-2020 20:24:46.562 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+17-Dec-2020 20:24:46.952 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+17-Dec-2020 20:24:47.029 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [681] milliseconds
+17-Dec-2020 20:24:47.092 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+17-Dec-2020 20:24:47.093 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.41]
+17-Dec-2020 20:24:47.103 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/litoral/Documents/Clase/PSP/PSPServlets/apache-tomcat-9.0.41/webapps/host-manager]
+17-Dec-2020 20:24:47.460 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+17-Dec-2020 20:24:47.547 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/litoral/Documents/Clase/PSP/PSPServlets/apache-tomcat-9.0.41/webapps/host-manager] has finished in [443] ms
+17-Dec-2020 20:24:47.547 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/litoral/Documents/Clase/PSP/PSPServlets/apache-tomcat-9.0.41/webapps/primer-servlet]
+17-Dec-2020 20:24:47.651 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+17-Dec-2020 20:24:47.662 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/litoral/Documents/Clase/PSP/PSPServlets/apache-tomcat-9.0.41/webapps/primer-servlet] has finished in [115] ms
+17-Dec-2020 20:24:47.663 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/litoral/Documents/Clase/PSP/PSPServlets/apache-tomcat-9.0.41/webapps/examples]
+17-Dec-2020 20:24:48.002 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+17-Dec-2020 20:24:48.126 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/litoral/Documents/Clase/PSP/PSPServlets/apache-tomcat-9.0.41/webapps/examples] has finished in [461] ms
+17-Dec-2020 20:24:48.128 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/litoral/Documents/Clase/PSP/PSPServlets/apache-tomcat-9.0.41/webapps/ROOT]
+17-Dec-2020 20:24:48.262 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+17-Dec-2020 20:24:48.270 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/litoral/Documents/Clase/PSP/PSPServlets/apache-tomcat-9.0.41/webapps/ROOT] has finished in [143] ms
+17-Dec-2020 20:24:48.272 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/litoral/Documents/Clase/PSP/PSPServlets/apache-tomcat-9.0.41/webapps/manager]
+17-Dec-2020 20:24:48.337 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+17-Dec-2020 20:24:48.346 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/litoral/Documents/Clase/PSP/PSPServlets/apache-tomcat-9.0.41/webapps/manager] has finished in [74] ms
+17-Dec-2020 20:24:48.348 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/litoral/Documents/Clase/PSP/PSPServlets/apache-tomcat-9.0.41/webapps/docs]
+17-Dec-2020 20:24:48.443 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+17-Dec-2020 20:24:48.448 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/litoral/Documents/Clase/PSP/PSPServlets/apache-tomcat-9.0.41/webapps/docs] has finished in [100] ms
+17-Dec-2020 20:24:48.467 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+17-Dec-2020 20:24:48.519 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1489] milliseconds
+17-Dec-2020 20:40:47.968 INFO [Thread-3] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+17-Dec-2020 20:40:47.973 INFO [Thread-3] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+17-Dec-2020 20:40:48.009 WARNING [Thread-3] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [primer-servlet] registered the JDBC driver [org.sqlite.JDBC] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+17-Dec-2020 20:40:48.021 INFO [Thread-3] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+17-Dec-2020 20:40:48.049 INFO [Thread-3] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]

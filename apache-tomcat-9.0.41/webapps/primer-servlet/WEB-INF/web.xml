@@ -26,5 +26,13 @@
       <servlet-name>suma</servlet-name>
       <url-pattern>/suma</url-pattern>
    </servlet-mapping>
+   <servlet>
+      <servlet-name>sqlite</servlet-name>
+      <servlet-class>ejemplo.SQLite</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>sqlite</servlet-name>
+      <url-pattern>/sqlite</url-pattern>
+   </servlet-mapping>
 </web-app>
 
