@@ -34,5 +34,13 @@
       <servlet-name>sqlite</servlet-name>
       <url-pattern>/sqlite</url-pattern>
    </servlet-mapping>
+    <servlet>
+      <servlet-name>sesiones</servlet-name>
+      <servlet-class>ejemplo.Sesiones</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>sesiones</servlet-name>
+      <url-pattern>/sesiones</url-pattern>
+   </servlet-mapping>
 </web-app>
 
