@@ -16,3 +16,5 @@
 127.0.0.1 - - [10/Dec/2020:20:48:05 +0100] "GET /favicon.ico HTTP/1.1" 200 8192
 127.0.0.1 - - [10/Dec/2020:20:50:15 +0100] "GET /primer-servlet/formulario.html HTTP/1.1" 200 291
 127.0.0.1 - - [10/Dec/2020:20:50:21 +0100] "POST /primer-servlet/mayusculas HTTP/1.1" 200 51
+127.0.0.1 - - [10/Dec/2020:20:52:01 +0100] "GET /primer-servlet/formulario.html HTTP/1.1" 200 291
+127.0.0.1 - - [10/Dec/2020:20:52:10 +0100] "POST /primer-servlet/mayusculas HTTP/1.1" 200 57
