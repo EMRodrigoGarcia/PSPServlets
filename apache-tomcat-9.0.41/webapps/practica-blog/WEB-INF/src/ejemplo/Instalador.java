@@ -25,6 +25,7 @@ public class Instalador extends HttpServlet {
         DB.desconectar();
        } catch (Exception e) {
            //TODO: handle exception
+           e.printStackTrace();
        } 
     }
 
