@@ -7,4 +7,12 @@
       <servlet-name>instalador</servlet-name>	
       <url-pattern>/instalador</url-pattern>
    </servlet-mapping>
+   <servlet>
+      <servlet-name> iniciosesion</servlet-name>
+      <servlet-class> ejemplo.InicioSesion </servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>iniciosesion</servlet-name>
+      <servlet-class>/iniciosesion</servlet-class>
+   </servlet-mapping>
 </web-app>
