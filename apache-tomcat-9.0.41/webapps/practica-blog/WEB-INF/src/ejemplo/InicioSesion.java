@@ -16,6 +16,18 @@ import javax.servlet.http.HttpSession;
 
 public class InicioSesion extends HttpServlet {
     @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
+        PrintWriter out = null;
+        try{
+            out = resp.getWriter();
+        }catch(Exception e) {
+            e.printStackTrace();
+        }
+        out.println(PlantillasHTML.mLoginHead);
+        out.println(PlantillasHTML.mLoginForm);
+        out.println(PlantillasHTML.mLoginFooter);
+    }
+    @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) {
        
        try {
@@ -38,43 +50,49 @@ public class InicioSesion extends HttpServlet {
 
 
             if(encontrado) {
-                pintarHTMLExito(out);
+               // pintarHTMLExito(out);
             }else {
-                pintarHTMLFallo(out);
+                loginHTMLFail(out);
             }
             
-           DB.desconectar();
+
        } catch (Exception e) {
            //TODO: handle exception
            e.printStackTrace();
        } 
     }
 
-    private void pintarHTMLExito(PrintWriter out) {
-        ST st = new ST(PlantillasHTML.mAlertExito);
-        out.println(PlantillasHTML.mHead);
-        out.println(PlantillasHTML.mCabecera);
-        out.println(st.setAttribute("Usuario autenticado correctamente"));
-        Connection conexion = DB.conectar();
+    private void loginHTMLSuccess(PrintWriter out) {
+        /*//ST st = new ST(PlantillasHTML.mAlertExito);
+
+        
+        try {
+         Connection conexion = DB.conectar();
         
         ResultSet set = DB.getEntradas();
 
-        DB.desconectar();
         while(set.next()) {
-            st = new ST(PlantillasHTML.mCarta);
-            st.setAttribute("titulo", set.getString("titulo"));
-            st.setAttribute("fecha", set.getDate("fecha").toString());
-            st.setAttribute("texto", set.getString("texto"));
-            out.println(st.render());
+            //st = new ST(PlantillasHTML.mCarta);
+            //st.setAttribute("titulo", set.getString("titulo"));
+            //st.setAttribute("fecha", set.getDate("fecha").toString());
+            //st.setAttribute("texto", set.getString("texto"));
+            //out.println(st.render());
+//            st.add("titulo", set.getString("titulo"));
         }
-        out.println(PlantillasHTML.mFooter);
+   
+        } catch (Exception e) {
+            //TODO: handle exception
+            e.printStackTrace();
+        }
+        out.println(PlantillasHTML.mFooter);*/
     }
 
-    private void pintarHTMLFallo(PrintWriter out) {
-        ST st = new ST(PlantillasHTML.mAlertFallo);
+    private void loginHTMLFail(PrintWriter out) {
+        out.println(PlantillasHTML.mAlertFallo.replace("$mensaje$", "Usuario / password no encontrado"));
         out.println(PlantillasHTML.mLoginHead);
-        out.println(st.setAttribute("Usuario / password no encontrado"));
+        out.println(PlantillasHTML.mLoginForm);
         out.println(PlantillasHTML.mLoginFooter);
+        //Blog.printBlog(out); 
     }
 
        

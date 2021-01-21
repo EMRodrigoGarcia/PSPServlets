@@ -24,4 +24,12 @@
       <servlet-name>cerrar</servlet-name>
       <url-pattern>/cerrar</url-pattern>
    </servlet-mapping>
+   <servlet>
+      <servlet-name> blog</servlet-name>
+      <servlet-class> ejemplo.Blog </servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>blog</servlet-name>
+      <url-pattern>/blog</url-pattern>
+   </servlet-mapping>
 </web-app>
