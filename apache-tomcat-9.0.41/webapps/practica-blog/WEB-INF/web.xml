@@ -1,5 +1,5 @@
 <web-app>
-   <servlet>
+   <!--<servlet>
       <servlet-name>instalador</servlet-name>			
       <servlet-class>ejemplo.Instalador</servlet-class>	
    </servlet>
@@ -7,6 +7,7 @@
       <servlet-name>instalador</servlet-name>	
       <url-pattern>/instalador</url-pattern>
    </servlet-mapping>
+   -->
    <servlet>
       <servlet-name> iniciosesion</servlet-name>
       <servlet-class> ejemplo.InicioSesion </servlet-class>

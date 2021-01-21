@@ -89,10 +89,14 @@ public class InicioSesion extends HttpServlet {
 
     private void loginHTMLFail(PrintWriter out) {
         out.println(PlantillasHTML.mAlertFallo.replace("$mensaje$", "Usuario / password no encontrado"));
+        printLogin(out);
+        //Blog.printBlog(out); 
+    }
+
+    public static void printLogin(PrintWriter out) {
         out.println(PlantillasHTML.mLoginHead);
         out.println(PlantillasHTML.mLoginForm);
         out.println(PlantillasHTML.mLoginFooter);
-        //Blog.printBlog(out); 
     }
 
        
