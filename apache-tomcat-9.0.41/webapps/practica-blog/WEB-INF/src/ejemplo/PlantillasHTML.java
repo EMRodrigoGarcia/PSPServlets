@@ -1,7 +1,7 @@
 package ejemplo;
 
 public class PlantillasHTML {
-    private static final String mHead = 
+    public static final String mHead = 
     "<!DOCTYPE html>"+
     "<html lang=\"en\">"+
     "<head>"+
@@ -9,12 +9,13 @@ public class PlantillasHTML {
         "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">"+
         "<title>Mi Blog</title>"+
         "<link rel=\"stylesheet\" href=\"./css/bootstrap.css\">"+
-    "</head>";
-    private static final String mCabecera = "<h1 id=\"cabecera\">"
+    "</head>" +
+    "<body>";
+    public static final String mCabecera = "<h1 id=\"cabecera\">"
        +"Blog "
        +"</h1>";
 
-    private static final String mCarta = "<div class=\"card align-self-center\" style=\"width: 30rem;\">"
+    public static final String mCarta = "<div class=\"card align-self-center\" style=\"width: 30rem;\">"
         +"<div class=\"card-body\">"
             +"<h5 class=\"card-title bg-primary text-white\">$titulo$</h5>"
             +"<p>$fecha$</p>"
@@ -25,11 +26,20 @@ public class PlantillasHTML {
 
     
 
-    private static final String mContainerStart = "<div class=\"container\"><div class=\"col\">";
-    private static final String mContainerEnd = "</div></div>";
-    private static final String mFooter = "</body></html>";
+    public static final String mContainerStart = "<div class=\"container\"><div class=\"col\">";
+    public static final String mContainerEnd = "</div></div>";
+    public static final String mFooter = "</body></html>";
+
+    public static final String mAlertExito = "<div class=\"alert alert-success\"> role=\"alert\">$mensaje$</div>";
+    public static final String mAlertFallo = "<div class=\"alert alert-danger\"> role=\"alert\">$mensaje$</div>";
 
 
-
+    public static final String mLoginHead = "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>Login</title></head> <body>";
+    public static final String mLoginForm = "<form action=\"iniciosesion\" method=\"post\">" +
+        "<label for=\"user\">User: <input type=\"text\" name=\"user\" id=\"input-user\"></label>"+
+        "<label for=\"password\">Password: <input type=\"password\" name=\"password\" id=\"input-password\"></label> "+
+        "<label for=\"submit\"><input type=\"submit\" value=\"Login\"></label>" +
+        "</form>";
+    public static final String mLoginFooter = "</body> </html>";
 
 }

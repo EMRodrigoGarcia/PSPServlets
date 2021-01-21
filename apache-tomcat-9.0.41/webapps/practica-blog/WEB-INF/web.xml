@@ -13,6 +13,15 @@
    </servlet>
    <servlet-mapping>
       <servlet-name>iniciosesion</servlet-name>
-      <servlet-class>/iniciosesion</servlet-class>
+      <url-pattern>/iniciosesion</url-pattern>
+   </servlet-mapping>
+
+   <servlet>
+      <servlet-name> cerrar</servlet-name>
+      <servlet-class> ejemplo.Cerrar </servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>cerrar</servlet-name>
+      <url-pattern>/cerrar</url-pattern>
    </servlet-mapping>
 </web-app>

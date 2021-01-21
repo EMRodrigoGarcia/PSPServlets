@@ -4,6 +4,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 public class DB {
@@ -77,6 +78,24 @@ public class DB {
 
         return cuantos;
     }
+
+    public static ResultSet selectTablaUsers(String user, String password) {
+        ResultSet set = null;
+        
+        String query = "SELECT * FROM usuarios WHERE usuario = ? AND password = ?";
+
+        try {
+            PreparedStatement stm = conexion.prepareStatement(query);
+            stm.setString(1, user);
+            stm.setString(2, password);
+            set = stm.executeQuery();
+        } catch (Exception e) {
+            //TODO: handle exception
+            e.printStackTrace();
+        }
+
+        return set;
+    }
     public static int actualizarTablaEntradas(String titulo, String texto, int fecha) {
         int cuantos = 0;
         //entradas = id (AI), titulo, texto, fecha
@@ -93,6 +112,20 @@ public class DB {
             e.printStackTrace();
         }
         return cuantos;
+    }
+
+    public static ResultSet getEntradas() {
+        ResultSet set = null;
+        String query = "SELECT titulo, fecha, texto FROM entradas";
+
+        try {
+            PreparedStatement stm = conexion.prepareStatement(query);
+            set = stm.executeQuery();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return set;
     }
 
 }
