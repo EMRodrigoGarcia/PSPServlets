@@ -96,6 +96,40 @@ public class DB {
 
         return set;
     }
+
+    public static ResultSet selectPasswordUsers(String user) {
+        ResultSet set = null;
+        
+        String query = "SELECT password FROM usuarios WHERE usuario = ?";
+
+        try {
+            PreparedStatement stm = conexion.prepareStatement(query);
+            stm.setString(1, user);
+            set = stm.executeQuery();
+        } catch (Exception e) {
+            //TODO: handle exception
+            e.printStackTrace();
+        }
+
+        return set;
+    }
+
+    public static int actualizarPassword(String user, String password) {
+        int cuantos = 0;
+        String query = "UPDATE usuarios SET password = ? WHERE usuario = ?";
+
+        try {
+            PreparedStatement stm = conexion.prepareStatement(query);
+
+            stm.setString(1, password);
+            stm.setString(2, user);
+            cuantos = stm.executeUpdate();
+        } catch (Exception e) {
+            //TODO: handle exception
+            e.printStackTrace();
+        }
+        return cuantos;
+    }
     public static int actualizarTablaEntradas(String titulo, String texto, int fecha) {
         int cuantos = 0;
         //entradas = id (AI), titulo, texto, fecha

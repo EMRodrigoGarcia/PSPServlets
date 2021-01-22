@@ -33,4 +33,12 @@
       <servlet-name>blog</servlet-name>
       <url-pattern>/blog</url-pattern>
    </servlet-mapping>
+   <servlet>
+      <servlet-name> panelcontrol</servlet-name>
+      <servlet-class> ejemplo.PanelControl </servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>panelcontrol</servlet-name>
+      <url-pattern>/panelcontrol</url-pattern>
+   </servlet-mapping>
 </web-app>

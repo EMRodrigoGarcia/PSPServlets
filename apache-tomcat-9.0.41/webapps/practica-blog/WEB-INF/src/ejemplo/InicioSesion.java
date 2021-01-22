@@ -50,7 +50,7 @@ public class InicioSesion extends HttpServlet {
 
 
             if(encontrado) {
-               // pintarHTMLExito(out);
+                loginHTMLSuccess(out);
             }else {
                 loginHTMLFail(out);
             }
@@ -85,8 +85,9 @@ public class InicioSesion extends HttpServlet {
             e.printStackTrace();
         }
         out.println(PlantillasHTML.mFooter);*/
-    }
 
+        PanelControl.printPanelControl(out);
+    }
     private void loginHTMLFail(PrintWriter out) {
         out.println(PlantillasHTML.mAlertFallo.replace("$mensaje$", "Usuario / password no encontrado"));
         printLogin(out);

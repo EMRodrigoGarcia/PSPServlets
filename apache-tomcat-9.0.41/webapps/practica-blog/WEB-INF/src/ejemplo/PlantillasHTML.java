@@ -50,4 +50,24 @@ public class PlantillasHTML {
         "</form>";
     public static final String mLoginFooter = "</body> </html>";
 
+
+    public static final String mPanelBotonesSuperior = " <ul>"+
+    "<li>"+
+        "<a href=\"cerrar\">Cerrar Sesión</a>"+
+    "</li>"+
+    "<li>"+
+        "<a href=\"blog\">Ir al blog</a>"+
+    "</li>"+
+"</ul>";
+    public static final String mButtonPanel =  "<form action=\"panelcontrol\" method=\"GET\">"+
+    "<button type=\"submit\">Panel de Control</button>"+
+    "</form>";
+
+    public static final String mPanelFormContrasena =  "<h2>Cambiar contraseña</h2>"+
+    "<form action=\"panelcontrol\" method=\"POST\">"+
+        "<label for=\"password\">Contraseña:<input type=\"password\" name=\"password\" id=\"password\"></label>"+
+        "<label for=\"newpassword\">Nueva contraseña:<input type=\"password\" name=\"newpassword\" id=\"newpassword\"></label>"+
+        "<input type=\"submit\" value=\"Cambiar contraseña\">"+
+    "</form>";
+    
 }
