@@ -51,4 +51,14 @@
       <url-pattern>/editor</url-pattern>
    </servlet-mapping>
    
+      
+   <servlet>
+      <servlet-name> borrar</servlet-name>
+      <servlet-class> ejemplo.Borrar </servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>borrar</servlet-name>
+      <url-pattern>/borrar</url-pattern>
+   </servlet-mapping>
+   
 </web-app>

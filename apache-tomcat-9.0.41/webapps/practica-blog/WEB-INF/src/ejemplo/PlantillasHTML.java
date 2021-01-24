@@ -71,7 +71,7 @@ public class PlantillasHTML {
     "</form>";
 
     public static final String mPanelCrear= 
-            "<form action=\"editor\" method=\"GET\"> <button type=\"submit\" value=\"Crear una nueva entrada\"> </button> </form>";
+            "<a href=\"editor\"> Crear una nueva entrada </a>";
 
     public static final String mEditorForm = "<form action=\"editor\" method=\"post\">"+
         "<ul class=\"list-unstyled\">"+
@@ -95,6 +95,17 @@ public class PlantillasHTML {
         "</ul>"+
     "</form>";
 
+
+    public static final String mPanelEntradasBegin = "<h1> Entradas </h1>" + 
+    "<div class=\"d-inline-flex p-3\">" +
+    "<ul class=\"list-group\">";
+
+    public static final String mPanelEntradasItem = "<li class=\"list-group-item\">"+
+            " $titulo$ " +
+            "<a href=\" $borrar$ \">Borrar</a>"+
+        "</li>";
+    
+    public static final String mPanelEntradasEnd = "</ul> </div>";
 
     
 }

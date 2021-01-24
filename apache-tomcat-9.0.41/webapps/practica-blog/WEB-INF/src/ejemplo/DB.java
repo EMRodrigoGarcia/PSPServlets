@@ -1,5 +1,6 @@
 package ejemplo;
 
+import java.security.MessageDigest;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -115,6 +116,23 @@ public class DB {
         return set;
     }
 
+    public static int borrarEntradaId(int id) {
+        int cuantos = 0;
+
+        String query = "DELETE FROM entradas WHERE id = ?";
+
+        try {
+            PreparedStatement stm = conexion.prepareStatement(query);
+            stm.setString(1, Integer.toString(id));
+
+            cuantos = stm.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return cuantos;
+    }
+
     public static int actualizarPassword(String user, String password) {
         int cuantos = 0;
         String query = "UPDATE usuarios SET password = ? WHERE usuario = ?";
@@ -150,13 +168,13 @@ public class DB {
 
     public static List<Entrada> getEntradas() {
         ResultSet set = null;
-        String query = "SELECT titulo, fecha, texto FROM entradas";
+        String query = "SELECT id, titulo, fecha, texto FROM entradas";
         List<Entrada> entradas = new ArrayList<>();
         try {
             PreparedStatement stm = conexion.prepareStatement(query);
             set = stm.executeQuery();
             while (set.next()) {
-                entradas.add(new Entrada(set.getString("titulo"), set.getString("texto"),
+                entradas.add(new Entrada(set.getInt("id"), set.getString("titulo"), set.getString("texto"),
                         conversionUnixLocalDate(set.getInt("fecha"))));
             }
         } catch (Exception e) {
@@ -176,5 +194,4 @@ public class DB {
 
         return (int) fechaLocalDate.toEpochSecond(LocalTime.NOON, ZoneOffset.MIN);
     }
-
 }

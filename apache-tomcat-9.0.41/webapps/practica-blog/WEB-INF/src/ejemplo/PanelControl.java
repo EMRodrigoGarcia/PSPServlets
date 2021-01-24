@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -29,6 +30,17 @@ public class PanelControl extends HttpServlet {
         out.println(PlantillasHTML.mPanelBotonesSuperior);
         out.println(PlantillasHTML.mPanelFormContrasena);
         out.println(PlantillasHTML.mPanelCrear);
+        out.println(PlantillasHTML.mPanelEntradasBegin);
+        // poner cada item y sustituir $borrar$ por borrar?id_entrada
+        Connection conexion = DB.conectar();
+        List<Entrada> entradas = DB.getEntradas();
+
+        for (Entrada entrada : entradas) {
+            out.println(PlantillasHTML.mPanelEntradasItem.replace("$titulo$", entrada.getTitulo()).replace("$borrar$",
+                    "borrar?id_entrada=" + Integer.toString(entrada.getId())));
+        }
+
+        out.println(PlantillasHTML.mPanelEntradasEnd);
         out.println(PlantillasHTML.mFooter);
     }
 

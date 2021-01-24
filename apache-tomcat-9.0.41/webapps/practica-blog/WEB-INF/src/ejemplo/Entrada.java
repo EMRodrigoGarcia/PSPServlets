@@ -6,11 +6,13 @@ public class Entrada {
     public String titulo;
     private String texto;
     private LocalDate fechaPublicacion;
+    private int id;
 
-    public Entrada(String titulo, String texto, LocalDate fechaPublicacion) {
+    public Entrada(int id, String titulo, String texto, LocalDate fechaPublicacion) {
         this.titulo = titulo;
         this.texto = texto;
         this.fechaPublicacion = fechaPublicacion;
+        this.id = id;
     }
 
     @Override
@@ -21,6 +23,14 @@ public class Entrada {
 
     public String getTitulo() {
         return this.titulo;
+    }
+
+    public int getId() {
+        return this.id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setTitulo(String titulo) {
