@@ -24,7 +24,6 @@ public class Instalador extends HttpServlet {
         DB.actualizarTablaUsers("admin", "admin");
         DB.desconectar();
        } catch (Exception e) {
-           //TODO: handle exception
            e.printStackTrace();
        } 
     }

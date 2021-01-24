@@ -13,14 +13,10 @@ public class Entrada {
         this.fechaPublicacion = fechaPublicacion;
     }
 
-
     @Override
     public String toString() {
-        return "{" +
-            " titulo='" + getTitulo() + "'" +
-            ", texto='" + getTexto() + "'" +
-            ", fechaPublicacion='" + getFechaPublicacion() + "'" +
-            "}";
+        return "{" + " titulo='" + getTitulo() + "'" + ", texto='" + getTexto() + "'" + ", fechaPublicacion='"
+                + getFechaPublicacion() + "'" + "}";
     }
 
     public String getTitulo() {
@@ -47,6 +43,4 @@ public class Entrada {
         this.fechaPublicacion = fechaPublicacion;
     }
 
-
-    
 }

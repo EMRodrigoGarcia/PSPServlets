@@ -29,7 +29,6 @@ public class Blog extends HttpServlet {
                 printBlog(out);
             }
         } catch (Exception e) {
-            // TODO: handle exception
             e.printStackTrace();
         }
 
@@ -46,7 +45,9 @@ public class Blog extends HttpServlet {
             out.println(PlantillasHTML.mButtonLogin);
 
             for (Entrada entrada : entradas) {
-                out.println(PlantillasHTML.mCarta.replace("$titulo$", entrada.getTitulo()).replace("$fecha$", entrada.getFechaPublicacion().toString()).replace("$texto$", entrada.getTexto()));
+                out.println(PlantillasHTML.mCarta.replace("$titulo$", entrada.getTitulo())
+                        .replace("$fecha$", entrada.getFechaPublicacion().toString())
+                        .replace("$texto$", entrada.getTexto()));
             }
 
         } catch (Exception e) {
@@ -63,9 +64,11 @@ public class Blog extends HttpServlet {
             out.println(PlantillasHTML.mCabecera.replace("$mensaje$", "Blog"));
             out.println(PlantillasHTML.mButtonPanel);
             out.println(PlantillasHTML.mButtonLogout);
-            
-            for(Entrada entrada : entradas) {            
-                out.println(PlantillasHTML.mCarta.replace("$titulo$", entrada.getTitulo()).replace("$fecha$", entrada.getFechaPublicacion().toString()).replace("$texto$", entrada.getTexto()));
+
+            for (Entrada entrada : entradas) {
+                out.println(PlantillasHTML.mCarta.replace("$titulo$", entrada.getTitulo())
+                        .replace("$fecha$", entrada.getFechaPublicacion().toString())
+                        .replace("$texto$", entrada.getTexto()));
             }
 
         } catch (Exception e) {

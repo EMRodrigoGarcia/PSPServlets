@@ -16,8 +16,8 @@ public class Cerrar extends HttpServlet {
             req.getSession(true).invalidate();
             resp.sendRedirect(req.getContextPath() + "/blog");
 
-        }catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
-    }   
+    }
 }

@@ -43,14 +43,14 @@ public class Editor extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) {
-        //conseguir valores 
-        //add a bbdd
-        //redirigir a panel
+        // conseguir valores
+        // add a bbdd
+        // redirigir a panel
 
         String titulo = req.getParameter("titulo");
         String fecha = req.getParameter("fecha");
         String texto = req.getParameter("texto");
-        
+
         LocalDate fechaLocalDate = LocalDate.parse(fecha);
         int fechaUnix = DB.conversionLocalDateUnix(fechaLocalDate);
 

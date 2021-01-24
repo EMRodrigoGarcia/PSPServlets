@@ -1,11 +1,9 @@
 package ejemplo;
 
-import java.lang.reflect.InvocationTargetException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.Instant;
 import java.time.LocalDate;
@@ -15,6 +13,7 @@ import java.time.ZoneOffset;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+
 public class DB {
     public static Connection conexion;
 
@@ -27,7 +26,6 @@ public class DB {
                 conexion = DriverManager.getConnection(url);
                 System.out.println("Conexion establecida");
             } catch (Exception e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
         }
@@ -54,8 +52,7 @@ public class DB {
         try {
             Statement stm = conexion.createStatement();
             stm.execute(query);
-        }catch(Exception e) {
-            // TODO Auto-generated catch block
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -66,7 +63,6 @@ public class DB {
             Statement stm = conexion.createStatement();
             stm.execute(query);
         } catch (Exception e) {
-            //TODO: handle exception
             e.printStackTrace();
         }
     }
@@ -78,9 +74,8 @@ public class DB {
             PreparedStatement stm = conexion.prepareStatement(query);
             stm.setString(1, usuario);
             stm.setString(2, password);
-           cuantos = stm.executeUpdate();
+            cuantos = stm.executeUpdate();
         } catch (Exception e) {
-            //TODO: handle exception
             e.printStackTrace();
         }
 
@@ -89,7 +84,7 @@ public class DB {
 
     public static ResultSet selectTablaUsers(String user, String password) {
         ResultSet set = null;
-        
+
         String query = "SELECT * FROM usuarios WHERE usuario = ? AND password = ?";
 
         try {
@@ -98,7 +93,6 @@ public class DB {
             stm.setString(2, password);
             set = stm.executeQuery();
         } catch (Exception e) {
-            //TODO: handle exception
             e.printStackTrace();
         }
 
@@ -107,7 +101,7 @@ public class DB {
 
     public static ResultSet selectPasswordUsers(String user) {
         ResultSet set = null;
-        
+
         String query = "SELECT password FROM usuarios WHERE usuario = ?";
 
         try {
@@ -115,7 +109,6 @@ public class DB {
             stm.setString(1, user);
             set = stm.executeQuery();
         } catch (Exception e) {
-            //TODO: handle exception
             e.printStackTrace();
         }
 
@@ -133,14 +126,14 @@ public class DB {
             stm.setString(2, user);
             cuantos = stm.executeUpdate();
         } catch (Exception e) {
-            //TODO: handle exception
             e.printStackTrace();
         }
         return cuantos;
     }
+
     public static int actualizarTablaEntradas(String titulo, String texto, int fecha) {
         int cuantos = 0;
-        //entradas = id (AI), titulo, texto, fecha
+        // entradas = id (AI), titulo, texto, fecha
         String query = "INSERT OR REPLACE INTO entradas(titulo, texto, fecha) VALUES (?, ?, ?)";
         try {
             PreparedStatement stm = conexion.prepareStatement(query);
@@ -150,7 +143,6 @@ public class DB {
             stm.setInt(3, fecha);
             cuantos = stm.executeUpdate();
         } catch (Exception e) {
-            //TODO: handle exception
             e.printStackTrace();
         }
         return cuantos;
@@ -163,31 +155,26 @@ public class DB {
         try {
             PreparedStatement stm = conexion.prepareStatement(query);
             set = stm.executeQuery();
-            while(set.next()) {
-                entradas.add(new Entrada(set.getString("titulo"), set.getString("texto"), conversionUnixLocalDate(set.getInt("fecha"))));
+            while (set.next()) {
+                entradas.add(new Entrada(set.getString("titulo"), set.getString("texto"),
+                        conversionUnixLocalDate(set.getInt("fecha"))));
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
-        entradas.sort(Comparator.comparing(Entrada::getFechaPublicacion).reversed());
 
+        entradas.sort(Comparator.comparing(Entrada::getFechaPublicacion).reversed());
 
         return entradas;
     }
 
-
     private static LocalDate conversionUnixLocalDate(int fechaUnix) {
-        LocalDate localDate = null;
-        Instant instant = Instant.ofEpochSecond((long) fechaUnix);
-
-        localDate = instant.atZone(ZoneId.systemDefault()).toLocalDate();
-        return localDate;
+        return Instant.ofEpochSecond((int) fechaUnix).atZone(ZoneId.systemDefault()).toLocalDate();
     }
 
     public static int conversionLocalDateUnix(LocalDate fechaLocalDate) {
 
-	    return (int) fechaLocalDate.toEpochSecond(LocalTime.NOON, ZoneOffset.MIN);
+        return (int) fechaLocalDate.toEpochSecond(LocalTime.NOON, ZoneOffset.MIN);
     }
 
 }

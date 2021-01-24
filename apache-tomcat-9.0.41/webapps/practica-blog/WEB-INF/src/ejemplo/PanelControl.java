@@ -20,11 +20,9 @@ public class PanelControl extends HttpServlet {
             PrintWriter out = resp.getWriter();
             printPanelControl(out);
         } catch (Exception e) {
-            //TODO: handle exception
             e.printStackTrace();
         }
     }
-
 
     public static void printPanelControl(PrintWriter out) {
         out.println(PlantillasHTML.mHead);
@@ -49,19 +47,19 @@ public class PanelControl extends HttpServlet {
         try {
             ResultSet set = DB.selectPasswordUsers(userRecibido);
 
-            while(set.next()) {
-                // comprobar que su contrasena coincide 
+            while (set.next()) {
+                // comprobar que su contrasena coincide
                 if (set.getString("password").equals(passwordRecibida)) {
                     // actualizar bbdd para cambiar tabla users con contrasena nueva
                     DB.actualizarPassword(userRecibido, newPasswordRecibida);
                     PrintWriter out = resp.getWriter();
-                    out.println(PlantillasHTML.mAlertExito.replace("$mensaje$", "Contraseña reemplazada correctamente"));
+                    out.println(
+                            PlantillasHTML.mAlertExito.replace("$mensaje$", "Contraseña reemplazada correctamente"));
                     printPanelControl(out);
                 }
             }
         } catch (Exception e) {
             e.printStackTrace();
-            //TODO: handle exception
         }
     }
 }
