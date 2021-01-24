@@ -12,7 +12,7 @@ public class PlantillasHTML {
     "</head>" +
     "<body>";
     public static final String mCabecera = "<h1 id=\"cabecera\" class=\"bg-success text-white m-3 \">"
-       +"Blog "
+       +" $mensaje$ "
        +"</h1>";
 
     public static final String mButtonLogout = "<form action=\"cerrar\">"+
@@ -69,5 +69,32 @@ public class PlantillasHTML {
         "<label for=\"newpassword\">Nueva contraseña:<input type=\"password\" name=\"newpassword\" id=\"newpassword\"></label>"+
         "<input type=\"submit\" value=\"Cambiar contraseña\">"+
     "</form>";
+
+    public static final String mPanelCrear= 
+            "<form action=\"editor\" method=\"GET\"> <button type=\"submit\" value=\"Crear una nueva entrada\"> </button> </form>";
+
+    public static final String mEditorForm = "<form action=\"editor\" method=\"post\">"+
+        "<ul class=\"list-unstyled\">"+
+            "<li>"+
+                "<input type=\"text\" name=\"titulo\" id=\"titulo\">"+
+            "</li>"+
+            "<li>"+
+
+                "<textarea name=\"texto\" id=\"texto\" cols=\"30\" rows=\"10\"></textarea>"+
+            "</li>"+
+
+            "<li>"+
+
+                "<input type=\"date\" name=\"fecha\" id=\"fecha\">"+
+            "</li>"+
+
+            "<li>"+
+
+                "<input type=\"submit\" value=\"Guardar\">"+
+            "</li>"+
+        "</ul>"+
+    "</form>";
+
+
     
 }

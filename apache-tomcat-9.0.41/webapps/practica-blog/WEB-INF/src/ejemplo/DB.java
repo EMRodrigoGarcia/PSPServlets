@@ -7,6 +7,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.ZoneId;
+import java.time.ZoneOffset;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 public class DB {
     public static Connection conexion;
 
@@ -148,18 +156,38 @@ public class DB {
         return cuantos;
     }
 
-    public static ResultSet getEntradas() {
+    public static List<Entrada> getEntradas() {
         ResultSet set = null;
         String query = "SELECT titulo, fecha, texto FROM entradas";
-
+        List<Entrada> entradas = new ArrayList<>();
         try {
             PreparedStatement stm = conexion.prepareStatement(query);
             set = stm.executeQuery();
+            while(set.next()) {
+                entradas.add(new Entrada(set.getString("titulo"), set.getString("texto"), conversionUnixLocalDate(set.getInt("fecha"))));
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
+        
+        entradas.sort(Comparator.comparing(Entrada::getFechaPublicacion).reversed());
 
-        return set;
+
+        return entradas;
+    }
+
+
+    private static LocalDate conversionUnixLocalDate(int fechaUnix) {
+        LocalDate localDate = null;
+        Instant instant = Instant.ofEpochSecond((long) fechaUnix);
+
+        localDate = instant.atZone(ZoneId.systemDefault()).toLocalDate();
+        return localDate;
+    }
+
+    public static int conversionLocalDateUnix(LocalDate fechaLocalDate) {
+
+	    return (int) fechaLocalDate.toEpochSecond(LocalTime.NOON, ZoneOffset.MIN);
     }
 
 }

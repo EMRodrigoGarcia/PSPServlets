@@ -17,6 +17,7 @@ import javax.servlet.http.HttpSession;
 public class InicioSesion extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
+        resp.setCharacterEncoding("UTF-8");
         PrintWriter out = null;
         try{
             out = resp.getWriter();
@@ -45,12 +46,13 @@ public class InicioSesion extends HttpServlet {
                     sesion.setMaxInactiveInterval(60 * 30);
                 }
             }            
-
+            resp.setCharacterEncoding("UTF-8");
             PrintWriter out = resp.getWriter();
 
 
             if(encontrado) {
-                loginHTMLSuccess(out);
+//                loginHTMLSuccess(out);
+                    resp.sendRedirect(req.getContextPath() + "/panelcontrol");
             }else {
                 loginHTMLFail(out);
             }
@@ -62,8 +64,8 @@ public class InicioSesion extends HttpServlet {
        } 
     }
 
-    private void loginHTMLSuccess(PrintWriter out) {
-        /*//ST st = new ST(PlantillasHTML.mAlertExito);
+    /*private void loginHTMLSuccess(PrintWriter out) {
+        //ST st = new ST(PlantillasHTML.mAlertExito);
 
         
         try {
@@ -84,10 +86,10 @@ public class InicioSesion extends HttpServlet {
             //TODO: handle exception
             e.printStackTrace();
         }
-        out.println(PlantillasHTML.mFooter);*/
+        out.println(PlantillasHTML.mFooter);
 
         PanelControl.printPanelControl(out);
-    }
+    }*/
     private void loginHTMLFail(PrintWriter out) {
         out.println(PlantillasHTML.mAlertFallo.replace("$mensaje$", "Usuario / password no encontrado"));
         printLogin(out);

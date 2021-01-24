@@ -6,8 +6,6 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import org.stringtemplate.v4.*;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,6 +16,7 @@ public class PanelControl extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
         try {
+            resp.setCharacterEncoding("UTF-8");
             PrintWriter out = resp.getWriter();
             printPanelControl(out);
         } catch (Exception e) {
@@ -31,6 +30,7 @@ public class PanelControl extends HttpServlet {
         out.println(PlantillasHTML.mHead);
         out.println(PlantillasHTML.mPanelBotonesSuperior);
         out.println(PlantillasHTML.mPanelFormContrasena);
+        out.println(PlantillasHTML.mPanelCrear);
         out.println(PlantillasHTML.mFooter);
     }
 
