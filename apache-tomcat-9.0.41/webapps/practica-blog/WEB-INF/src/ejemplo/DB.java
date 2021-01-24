@@ -1,6 +1,5 @@
 package ejemplo;
 
-import java.security.MessageDigest;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
