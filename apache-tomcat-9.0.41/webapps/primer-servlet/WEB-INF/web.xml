@@ -51,5 +51,13 @@
       <servlet-name>rpchora</servlet-name>
       <url-pattern>/rpchora</url-pattern>
    </servlet-mapping>
+    <servlet>
+      <servlet-name>intercambiomensajes</servlet-name>
+      <servlet-class>ejemplo.IntercambioMensajes</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>intercambiomensajes</servlet-name>
+      <url-pattern>/intercambiomensajes</url-pattern>
+   </servlet-mapping>
 </web-app>
 
