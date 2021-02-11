@@ -5,6 +5,8 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.stringtemplate.v4.*;
 
@@ -18,6 +20,7 @@ public class Blog extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
         try {
+            resp.setCharacterEncoding("UTF-8");
             PrintWriter out = resp.getWriter();
             HttpSession sesion = req.getSession(false);
             if (sesion != null) {
@@ -26,7 +29,6 @@ public class Blog extends HttpServlet {
                 printBlog(out);
             }
         } catch (Exception e) {
-            // TODO: handle exception
             e.printStackTrace();
         }
 
@@ -36,18 +38,20 @@ public class Blog extends HttpServlet {
         try {
 
             Connection conexion = DB.conectar();
-            ResultSet set = DB.getEntradas();
+            List<Entrada> entradas = DB.getEntradas();
             out.println(PlantillasHTML.mHead);
-            out.println(PlantillasHTML.mCabecera);
+            out.println(PlantillasHTML.mCabecera.replace("$mensaje$", "Blog"));
 
             out.println(PlantillasHTML.mButtonLogin);
-            String aux = "";
-            while (set.next()) {
-                out.println(PlantillasHTML.mCarta.replace("$titulo$", set.getString("titulo")).replace("$fecha$",
-                        Integer.toString(set.getInt("fecha")).replace("$texto$", set.getString("texto"))));
+
+            for (Entrada entrada : entradas) {
+                out.println(PlantillasHTML.mCarta.replace("$titulo$", entrada.getTitulo())
+                        .replace("$fecha$", entrada.getFechaPublicacion().toString())
+                        .replace("$texto$", entrada.getTexto()));
             }
+
         } catch (Exception e) {
-            // TODO: handle exception
+            e.printStackTrace();
         }
 
     }
@@ -55,18 +59,19 @@ public class Blog extends HttpServlet {
     public static void printBlogLogged(PrintWriter out) {
         try {
             Connection conexion = DB.conectar();
-            ResultSet set = DB.getEntradas();
+            List<Entrada> entradas = DB.getEntradas();
             out.println(PlantillasHTML.mHead);
-            out.println(PlantillasHTML.mCabecera);
+            out.println(PlantillasHTML.mCabecera.replace("$mensaje$", "Blog"));
             out.println(PlantillasHTML.mButtonPanel);
             out.println(PlantillasHTML.mButtonLogout);
-            String aux = "";
-            while (set.next()) {
-                out.println(PlantillasHTML.mCarta.replace("$titulo$", set.getString("titulo")).replace("$fecha$",
-                        Integer.toString(set.getInt("fecha")).replace("$texto$", set.getString("texto"))));
+
+            for (Entrada entrada : entradas) {
+                out.println(PlantillasHTML.mCarta.replace("$titulo$", entrada.getTitulo())
+                        .replace("$fecha$", entrada.getFechaPublicacion().toString())
+                        .replace("$texto$", entrada.getTexto()));
             }
+
         } catch (Exception e) {
-            // TODO: handle exception
             e.printStackTrace();
         }
 

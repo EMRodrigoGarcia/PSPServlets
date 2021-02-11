@@ -12,11 +12,12 @@ public class Cerrar extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
         try {
+            resp.setCharacterEncoding("UTF-8");
             req.getSession(true).invalidate();
-            PrintWriter out = resp.getWriter();
-            Blog.printBlog(out);
-        }catch(Exception e) {
+            resp.sendRedirect(req.getContextPath() + "/blog");
+
+        } catch (Exception e) {
             e.printStackTrace();
         }
-    }   
+    }
 }

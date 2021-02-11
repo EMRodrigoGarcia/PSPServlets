@@ -12,7 +12,7 @@ public class PlantillasHTML {
     "</head>" +
     "<body>";
     public static final String mCabecera = "<h1 id=\"cabecera\" class=\"bg-success text-white m-3 \">"
-       +"Blog "
+       +" $mensaje$ "
        +"</h1>";
 
     public static final String mButtonLogout = "<form action=\"cerrar\">"+
@@ -69,5 +69,43 @@ public class PlantillasHTML {
         "<label for=\"newpassword\">Nueva contraseña:<input type=\"password\" name=\"newpassword\" id=\"newpassword\"></label>"+
         "<input type=\"submit\" value=\"Cambiar contraseña\">"+
     "</form>";
+
+    public static final String mPanelCrear= 
+            "<a href=\"editor\"> Crear una nueva entrada </a>";
+
+    public static final String mEditorForm = "<form action=\"editor\" method=\"post\">"+
+        "<ul class=\"list-unstyled\">"+
+            "<li>"+
+                "<input type=\"text\" name=\"titulo\" id=\"titulo\">"+
+            "</li>"+
+            "<li>"+
+
+                "<textarea name=\"texto\" id=\"texto\" cols=\"30\" rows=\"10\"></textarea>"+
+            "</li>"+
+
+            "<li>"+
+
+                "<input type=\"date\" name=\"fecha\" id=\"fecha\">"+
+            "</li>"+
+
+            "<li>"+
+
+                "<input type=\"submit\" value=\"Guardar\">"+
+            "</li>"+
+        "</ul>"+
+    "</form>";
+
+
+    public static final String mPanelEntradasBegin = "<h1> Entradas </h1>" + 
+    "<div class=\"d-inline-flex p-3\">" +
+    "<ul class=\"list-group\">";
+
+    public static final String mPanelEntradasItem = "<li class=\"list-group-item\">"+
+            " $titulo$ " +
+            "<a href=\" $borrar$ \">Borrar</a>"+
+        "</li>";
+    
+    public static final String mPanelEntradasEnd = "</ul> </div>";
+
     
 }

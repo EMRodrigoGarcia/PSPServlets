@@ -41,4 +41,24 @@
       <servlet-name>panelcontrol</servlet-name>
       <url-pattern>/panelcontrol</url-pattern>
    </servlet-mapping>
+   
+   <servlet>
+      <servlet-name> editor</servlet-name>
+      <servlet-class> ejemplo.Editor </servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>editor</servlet-name>
+      <url-pattern>/editor</url-pattern>
+   </servlet-mapping>
+   
+      
+   <servlet>
+      <servlet-name> borrar</servlet-name>
+      <servlet-class> ejemplo.Borrar </servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>borrar</servlet-name>
+      <url-pattern>/borrar</url-pattern>
+   </servlet-mapping>
+   
 </web-app>
