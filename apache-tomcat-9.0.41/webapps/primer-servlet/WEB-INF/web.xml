@@ -42,5 +42,14 @@
       <servlet-name>sesiones</servlet-name>
       <url-pattern>/sesiones</url-pattern>
    </servlet-mapping>
+
+   <servlet>
+      <servlet-name>rpchora</servlet-name>
+      <servlet-class>ejemplo.RPCHora</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>rpchora</servlet-name>
+      <url-pattern>/rpchora</url-pattern>
+   </servlet-mapping>
 </web-app>
 
